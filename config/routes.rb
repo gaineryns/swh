@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'plainpage#index'
-
+  get 'plainpage/index'
   get 'signin', :to => 'access#login'
   get 'access/menu'
   get 'access/login'

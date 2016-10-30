@@ -8,21 +8,24 @@ layout 'signin'
   def login
   end
 
+  def menu
+
+  end
+
   def attempt_login
     if params[:username].present? && params[:password].present?
-      found_user = User.where(:username => params[:username])
+      found_user = User.where(:username => params[:username]).first
       if found_user
-        authorize_user = found_user.authenticate(params[:password])
+        author_user = found_user.authenticate(params[:password])
       end
     end
 
-    if authorize_user
-
-      session[:user_id] = authorize_user.id
+    if author_user
+      session[:user_id] = 'rien'
       flash[:notice] = "You are now logged in."
-      redirect_to(root)
+      redirect_to(root_path)
     else
-      flash.now[:notice] = "Invalid username/password combination."
+      flash.now[:notice] = "Invalid username/password."
       render('login')
     end
 

@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string "username"
       t.string "address"
       t.string "email"
-      t.string "password_digest", :limit => 40
+      t.string "password_digest"
       t.string "phone"
 
 
