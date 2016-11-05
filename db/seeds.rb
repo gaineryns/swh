@@ -12,41 +12,47 @@ users = User.create([
         last_name: 'yongwo',
         username: 'gaineryns',
         address: 'cameroun',
-        password: 'steve'
+        password: 'steve',
+        email: 's.yongwo@email.fr'
     },
     {
         first_name: 'laurent',
         last_name: 'clain',
         username: 'l.clain',
         address: 'reunion',
-        password: 'laurent'
+        password: 'laurent',
+        email: 'l.clain@email.fr'
     },
     {
         first_name: 'samy',
         last_name: 'guelaia',
         username: 's.guelaia',
         address: 'algerie',
-        password: 'samy'
+        password: 'samy',
+        email: 's.guelaia@email.fr'
     },
     {
         first_name: 'walid',
         last_name: 'bouzebra',
         username: 'w.bouzebra',
         address: 'algerie',
-        password: 'walid'
+        password: 'walid',
+        email: 'w.bouzebra@email.fr'
     },
     {
         first_name: 'alexis',
         last_name: 'de carvalho',
         username: 'a.decarvalho',
         address: 'portugal',
-        password: 'alexis'
+        password: 'alexis',
+        email: 'a.decarvalho@email.fr'
     },
     {
         first_name: 'celeste',
         last_name: 'vividila',
         username: 'c.vividila',
         address: 'congo',
-        password: 'celeste'
+        password: 'celeste',
+        email: 'c.vividila@email.fr'
     },
     ])

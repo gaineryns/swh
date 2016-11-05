@@ -1,0 +1,43 @@
+<!-- page content -->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= button_to "Ajouter un utilisateur", new_user_path, :method => :get, :class => 'btn btn-large btn-primary' %>
+      </br>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading text-center">Comptes Utilisateurs</div>
+        <!-- Table -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#ID</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Editer</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user|%>        
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <td><%= button_to 'Editer', edit_user_path(user) %></td>
+              <td><%= button_to 'Supprimer', user_path(user), method: :delete, data: { confirm: '*********** Etes-vous sur ? ***********' } %></td>
+            </tr>
+            <% end %> 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /page content -->

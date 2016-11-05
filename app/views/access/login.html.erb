@@ -1,20 +1,35 @@
-<% @page_title = "Login Page" %>
-
-<div class='login'>
-  <%= form_tag(access_attempt_login_path, :method => :post) do %>
-  <table>
-    <tr>
-      <td><%= label_tag(:username) %></td>
-      <td><%= text_field_tag(:username, params[:username]) %></td>
-    </tr>
-    <tr>
-      <td><%= label_tag(:password) %></td>
-      <td><%= text_field_tag(:password) %></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><%= submit_tag('Log In ') %></td>
-    </tr>
-  </table>
-  <% end %>
+<div class="">
+  <a class="hiddenanchor" id="tologin"></a>
+  <div id="wrapper">
+    <div id="login" class="animate form">
+      <section class="login_content">
+        <%= form_for(:session, url: access_login_url) do |f| %>
+      <h1>SmartWareHouse</h1>
+          <div>
+            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder =>"Email",  :required => ""  %>
+          </div>
+          <div>
+            <%= f.password_field :password, autofocus: true, :class => "form-control", :placeholder =>"Mot de passe",  :required => ""  %>
+          </div>
+          <div>
+            <%= f.submit "Connexion", :class => "btn btn-default submit" %>
+            <a class="reset_pass" href="#">Mot de passe oublié ?</a>
+          </div>
+          <div class="clearfix"></div>
+          <div class="separator">
+            <p class="change_link">New to site?
+              <%= link_to "Create Account", access_signup_path%>
+            </p>
+            <div class="clearfix"></div>
+            <br />
+            <div>
+              <p>©2016 All Rights Reserved. SmartWareHouse. Privacy and Terms</p>
+            </div>
+          </div>
+        <% end %>
+        <!-- form -->
+      </section>
+      <!-- content -->
+    </div>
+  </div>
 </div>

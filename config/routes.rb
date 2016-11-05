@@ -1,12 +1,27 @@
 Rails.application.routes.draw do
 
+  # Pour les données de la bdd Users
+  resources :users
+  
+  #Root URL
   root 'plainpage#index'
-  get 'plainpage/index'
+  
+  get 'plainpage/index' => 'index#plainpage'
+  #get 'plainpage/index'
   get 'signin', :to => 'access#login'
   get 'access/menu'
   get 'access/login'
   post 'access/attempt_login'
+  
+  #signup routes
+  get '/access/signup'
+  
+  # login/Logout routes
+  get 'access/login'  => 'access#new'
+  post 'access/login' => 'access#create'
+  delete 'access/logout' => 'access#destroy'
   get 'access/logout'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
